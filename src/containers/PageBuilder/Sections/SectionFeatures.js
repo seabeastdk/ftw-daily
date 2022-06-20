@@ -5,9 +5,10 @@ import Field, { pickValidProps } from '../Fields/Field.js';
 import BlockBuilder from '../Blocks/BlockBuilder.js';
 
 import SectionTag from './SectionTag.js';
-import css from './SectionColumns.module.css';
+import css from './SectionFeatures.module.css';
 
-const SectionColumns = props => {
+// TODO This is only an example. There's no example for this yet
+const SectionFeatures = props => {
   const {
     className,
     defaultClasses,
@@ -28,34 +29,26 @@ const SectionColumns = props => {
   const fieldComponents = options?.fieldComponents;
   const fieldOptions = { fieldComponents };
 
+  // TODO do we support this in Console?
   // Find background color if it is included
   const fixedBackgroundData = { ...background, type: 'hexColor' }; // TODO remove if type is included
   const colorProp = pickValidProps(fixedBackgroundData, fieldOptions);
   const backgroundColorMaybe = colorProp.color ? { backgroundColor: colorProp.color } : {};
 
+  // TODO do we support this in Console?
   // Create Image field for background image
   // This will be passed to SectionTag as responsive "background" image
   const backgroundImageMaybe = backgroundImage
     ? {
         backgroundImage: (
           <Field
-            data={{ ...backgroundImage, type: 'backgroundImage', bgColor: '#aae3ff' }}
-            className={css.backgroundImage}
+            data={{ ...backgroundImage, type: 'backgroundImage', bgColor: '#00AAFF' }}
+            className={defaultClasses.backgroundImage}
             options={fieldOptions}
           />
         ),
       }
     : {};
-
-  // Select class for column container
-  const columnsClasses =
-    numColumns === 4
-      ? css.fourColumns
-      : numColumns === 3
-      ? css.threeColumns
-      : numColumns === 2
-      ? css.twoColumns
-      : css.oneColumn;
 
   return (
     <SectionTag
@@ -65,15 +58,17 @@ const SectionColumns = props => {
       {...backgroundImageMaybe}
     >
       <header className={defaultClasses.sectionDetails}>
-        <Field data={title} className={defaultClasses.title} options={fieldOptions} />
+        <Field className={defaultClasses.title} data={title} options={fieldOptions} />
         <Field data={ingress} className={defaultClasses.ingress} options={fieldOptions} />
         <Field data={callToAction} className={defaultClasses.ctaButton} options={fieldOptions} />
       </header>
       {blocks ? (
-        <div className={classNames(defaultClasses.singleColumn, columnsClasses)}>
+        <div className={classNames(defaultClasses.singleColumn, css.featuresMain)}>
           <BlockBuilder
+            className={css.blockTag}
+            mediaClassName={css.media}
+            textClassName={css.text}
             blocks={blocks}
-            ctaButtonClass={defaultClasses.ctaButton}
             options={options}
           />
         </div>
@@ -82,4 +77,4 @@ const SectionColumns = props => {
   );
 };
 
-export default SectionColumns;
+export default SectionFeatures;

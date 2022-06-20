@@ -7,25 +7,25 @@
   padding: 36px;
 }
 
-.columns1 {
+.oneColumn {
   composes: singleColumn;
 }
 
-.columns2 {
+.twoColumns {
   composes: singleColumn;
   @media (--viewportMedium) {
     /* grid-template-columns: repeat(2, 1fr); */
     grid-template-columns: repeat(2, calc((100% - 36px) / 2));
   }
 }
-.columns3 {
+.threeColumns {
   composes: singleColumn;
   @media (--viewportMedium) {
     /* grid-template-columns: repeat(3, 1fr); */
     grid-template-columns: repeat(3, calc((100% - 2 * 36px) / 3));
   }
 }
-.columns4 {
+.fourColumns {
   composes: singleColumn;
   @media (--viewportMedium) {
     /* grid-template-columns: repeat(4, 1fr); */

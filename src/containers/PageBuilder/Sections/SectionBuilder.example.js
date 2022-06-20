@@ -73,6 +73,75 @@ export const SectionArticle = {
   },
 };
 
+export const SectionFeatures = {
+  component: SectionBuilder,
+  props: {
+    sections: [
+      {
+        sectionType: 'features',
+        sectionId: 'cms-features-section-no-block',
+        title: { type: 'heading1', content: 'Features' },
+        ingress: {
+          type: 'paragraph',
+          content: 'Welcome to Vesalandia',
+        },
+        callToAction: {
+          type: 'externalButtonLink',
+          href: 'https://www.sharetribe.com/docs/',
+          label: 'Buy tickets',
+        },
+        blocks: [
+          {
+            blockType: 'default-block',
+            blockId: 'cms-column3-block-1',
+            media: { type: 'image', alt: 'First image', image: imagePlaceholder(400, 400) },
+            title: { type: 'heading2', content: 'Image 1' },
+            text: {
+              type: 'markdown',
+              content: `**Lorem ipsum** dolor sit amet consectetur adepisci elit...`,
+            },
+            callToAction: {
+              type: 'internalButtonLink',
+              href: '/l/wooden-sauna/5aafa4ec-87c1-4043-b82f-14d67389dd19',
+              label: 'See the sauna',
+            },
+          },
+          {
+            blockType: 'default-block',
+            blockId: 'cms-column3-block-1',
+            media: { type: 'image', alt: 'First image', image: imagePlaceholder(400, 400) },
+            title: { type: 'heading2', content: 'Image 1' },
+            text: {
+              type: 'markdown',
+              content: `**Lorem ipsum** dolor sit amet consectetur adepisci elit...`,
+            },
+            callToAction: {
+              type: 'internalButtonLink',
+              href: '/l/wooden-sauna/5aafa4ec-87c1-4043-b82f-14d67389dd19',
+              label: 'See the sauna',
+            },
+          },
+          {
+            blockType: 'default-block',
+            blockId: 'cms-column3-block-1',
+            media: { type: 'image', alt: 'First image', image: imagePlaceholder(400, 400) },
+            title: { type: 'heading2', content: 'Image 1' },
+            text: {
+              type: 'markdown',
+              content: `**Lorem ipsum** dolor sit amet consectetur adepisci elit...`,
+            },
+            callToAction: {
+              type: 'internalButtonLink',
+              href: '/l/wooden-sauna/5aafa4ec-87c1-4043-b82f-14d67389dd19',
+              label: 'See the sauna',
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
+
 export const SectionColumns = {
   component: SectionBuilder,
   props: {

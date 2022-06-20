@@ -16,7 +16,7 @@ const defaultBlockComponents = {
 };
 
 const BlockBuilder = props => {
-  const { blocks, ctaButtonClass, options } = props;
+  const { blocks, ctaButtonClass, options, ...otherProps } = props;
   const ctaButtonClassMaybe = ctaButtonClass ? { ctaButtonClass } : {};
 
   // Extract block & field component mappings from props
@@ -41,7 +41,13 @@ const BlockBuilder = props => {
         const Block = config?.component;
         if (Block) {
           return (
-            <Block key={block.blockId} {...ctaButtonClassMaybe} {...blockOptionsMaybe} {...block} />
+            <Block
+              key={block.blockId}
+              {...ctaButtonClassMaybe}
+              {...blockOptionsMaybe}
+              {...block}
+              {...otherProps}
+            />
           );
         } else {
           // If the block type is unknown, the app can't know what to render

@@ -1,0 +1,37 @@
+.singleColumn {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 36px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px;
+}
+
+.featuresMain {
+  composes: singleColumn;
+}
+
+.blockTag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-auto-flow: dense;
+  gap: 0;
+
+  @media (--viewportMedium) {
+    gap: 72px;
+    flex-direction: row-reverse;
+  }
+
+  &:nth-child(even) {
+    @media (--viewportMedium) {
+      flex-direction: row;
+    }
+  }
+}
+
+.text {
+}
+
+.media {
+}

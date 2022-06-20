@@ -12,6 +12,7 @@ import css from './SectionBuilder.module.css';
 // Section components
 import SectionColumns from './SectionColumns.js';
 import SectionArticle from './SectionArticle.js';
+import SectionFeatures from './SectionFeatures.js';
 
 //////////////////////
 // Section builder //
@@ -20,6 +21,7 @@ import SectionArticle from './SectionArticle.js';
 const defaultSectionComponents = {
   columns: { component: SectionColumns },
   article: { component: SectionArticle },
+  features: { component: SectionFeatures },
 };
 
 const SectionBuilder = props => {
@@ -77,6 +79,6 @@ const SectionBuilder = props => {
   );
 };
 
-export { BlockTag, BlockDefault, SectionTag, SectionArticle, SectionColumns };
+export { BlockTag, BlockDefault, SectionTag, SectionArticle, SectionColumns, SectionFeatures };
 
 export default SectionBuilder;
