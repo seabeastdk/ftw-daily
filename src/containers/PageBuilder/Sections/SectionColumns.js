@@ -70,11 +70,14 @@ const SectionColumns = props => {
         <Field data={callToAction} className={defaultClasses.ctaButton} options={fieldOptions} />
       </header>
       {blocks ? (
-        <div className={classNames(defaultClasses.singleColumn, columnsClasses)}>
+        <div className={classNames(defaultClasses.baseColumn, columnsClasses)}>
           <BlockBuilder
-            blocks={blocks}
             ctaButtonClass={defaultClasses.ctaButton}
+            blocks={blocks}
             options={options}
+            // blockClassName={css.block}
+            // mediaClassName={css.media}
+            // textClassName={css.text}
           />
         </div>
       ) : null}

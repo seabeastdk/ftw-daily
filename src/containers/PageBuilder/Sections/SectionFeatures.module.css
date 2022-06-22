@@ -1,17 +1,17 @@
-.singleColumn {
+.baseColumn {
+  max-width: var(--contentMaxWidth);
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 36px;
-  max-width: 1200px;
+  gap: 32px;
   margin: 0 auto;
-  padding: 36px;
+  padding: 32px;
 }
 
 .featuresMain {
-  composes: singleColumn;
+  composes: baseColumn;
 }
 
-.blockTag {
+.block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@
   gap: 0;
 
   @media (--viewportMedium) {
-    gap: 72px;
+    gap: 64px;
     flex-direction: row-reverse;
   }
 
@@ -30,8 +30,8 @@
   }
 }
 
-.text {
+.media {
 }
 
-.media {
+.text {
 }
